@@ -1,0 +1,73 @@
+/* styles.css */
+.title {
+    text-align: center; /* Centrer le titre */
+    font-family: cursive; /* Utiliser une police cursive */
+    font-size: 28px; /* Ajuster la taille du texte */
+    margin-bottom: 20px; /* Ajouter un espace en bas du titre */
+}
+
+
+.great-vibes-regular {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajustez la marge supérieure selon vos besoins */
+}
+
+#searchInput {
+    width: 600px; /* Ajustez la largeur de la barre de recherche selon vos besoins */
+    height: 50px; /* Ajustez la hauteur de la barre de recherche selon vos besoins */
+    padding: 10px; /* Ajustez le rembourrage de la barre de recherche selon vos besoins */
+    font-size: 20px; /* Ajustez la taille de la police de la barre de recherche */
+    border: 2px solid #ccc; /* Ajustez l'épaisseur et la couleur de la bordure */
+    border-radius: 30px; /* Rend les coins de la barre de recherche arrondis */
+    outline: none; /* Supprime la bordure de focus */
+}
+
+#searchButton {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 12px; /* Ajustez l'espacement du bouton */
+    margin-left: 10px; /* Ajoutez une marge entre la barre de recherche et le bouton */
+}
+
+#searchButton img {
+    width: 24px; /* Ajustez la taille de l'icône */
+    height: 24px;
+}
+
+#suggestionsList {
+    width: 600px; /* Ajustez la largeur de la liste de suggestions selon vos besoins */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #fff;
+    border: 2px solid #ccc; /* Ajustez l'épaisseur et la couleur de la bordure */
+    border-top: none;
+    border-radius: 0 0 30px 30px; /* Rend les coins inférieurs de la liste de suggestions arrondis */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Ajoute une ombre à la liste de suggestions */
+    z-index: 1; /* Assure que la liste de suggestions est au-dessus de la barre de recherche */
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#suggestionsList li {
+    width: 100%; /* La largeur de chaque élément de la liste est égale à la largeur de la liste */
+    padding: 12px; /* Ajustez l'espacement des éléments de la liste */
+    text-align: center; /* Centrer le texte à l'intérieur de chaque élément */
+}
+
+#suggestionsList li:hover {
+    background-color: #f1f1f1; /* Changement de couleur au survol */
+}
+
+
