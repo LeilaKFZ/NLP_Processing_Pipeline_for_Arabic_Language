@@ -3,12 +3,9 @@ import os
 
 stemmer = FarasaStemmer()
 
-
 # Définir les chemins d'accès aux fichiers
-fichier_lemmes = os.path.join("..", "Datas", "lem_not.txt")
+fichier_lemmes = os.path.join("..", "Datas", "cut.txt")
 fichier_dictionnaire = os.path.join("..", "Datas", "dictionary.txt")
-
-
 
 # Ouvrir le fichier lem_not.txt "les mots non lemmatisés"
 with open(fichier_lemmes, "r", encoding='utf-8') as f_non_lem:
@@ -24,10 +21,10 @@ for mot in mots:
 
 # Itérer sur les mots et les classer
     if stem in dict:
-                # Ecrire le mot dans le fichier vocabulaire
+        # Ecrire le mot dans le fichier vocabulaire
         with open("../Datas/vocabulary.txt", "a", encoding='utf-8') as f_vocab:
                     f_vocab.write(mot + "\n")
     else:
-                # Ecrire le mot dans le fichier non-vocabulaire
-        with open("../Datas/rejected_words.txt", "a", encoding='utf-8') as f_not:
+        # Ecrire le mot dans le fichier non-vocabulaire
+        with open("../Datas/stem_not.txt", "a", encoding='utf-8') as f_not:
                     f_not.write(mot + "\n")
