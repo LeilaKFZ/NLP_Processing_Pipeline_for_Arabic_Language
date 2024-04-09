@@ -4,7 +4,7 @@ import os
 stemmer = FarasaStemmer()
 
 # Définir les chemins d'accès aux fichiers
-fichier_lemmes = os.path.join("..", "Datas", "cut.txt")
+fichier_lemmes = os.path.join("..", "Datas", "lem_not.txt")
 fichier_dictionnaire = os.path.join("..", "Datas", "dictionary.txt")
 
 # Ouvrir le fichier lem_not.txt "les mots non lemmatisés"
