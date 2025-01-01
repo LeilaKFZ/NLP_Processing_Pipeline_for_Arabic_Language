@@ -15,6 +15,6 @@
 ### Here is a detailed diagram of the processing pipeline:
 ![TALNNN](https://github.com/user-attachments/assets/368154f7-6aa4-4104-a566-7ee2ea2756dd)
 
-### Once processing is completed, the generated JSON file containing the next words is used in the Streamlit interface.
+Once processing is completed, the generated JSON file containing the next words is used in the Streamlit interface.
 
 
