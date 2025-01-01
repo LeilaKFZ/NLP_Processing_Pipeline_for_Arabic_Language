@@ -6,7 +6,7 @@ import os
 def create_word_cooccurrence_json(corpus_dir, vocabulary_file, output_json):
     """
     Reads text files from a corpus directory, checks words against vocabulary,
-    and creates a JSON file with word counts and co-occurrences, sorted by next word occurrence count.
+    and creates a JSON file with word counts and co-occurrences, SORTED by next word occurrence count.
 
     Args:
         corpus_dir (str): Path to the directory containing text files.
@@ -17,10 +17,10 @@ def create_word_cooccurrence_json(corpus_dir, vocabulary_file, output_json):
     with open(vocabulary_file, 'r', encoding='utf-8') as f:
         vocabulary = set(line.strip() for line in f)
 
-    # Initialize word counts and co-occurrences
+    # Initialization
     word_data = defaultdict(lambda: {"count": 0, "next_words": defaultdict(int)})
 
-    # Loop through files in the corpus directory
+    # Read corpus -train- files
     for filename in os.listdir(corpus_dir):
         if filename.endswith('.txt'):
             filepath = os.path.join(corpus_dir, filename)
@@ -38,20 +38,18 @@ def create_word_cooccurrence_json(corpus_dir, vocabulary_file, output_json):
                                 if next_word in vocabulary:
                                     word_data[word.lower()]["next_words"][next_word] += 1
 
-    # Sort next_words by occurrence count (descending order)
+    # Sort next_words according to descending order
     total_word_count = 0
     for word, data in word_data.items():
         total_word_count += data["count"]
         #data["next_words"] = dict(sorted(data["next_words"].items(), key=lambda item: item[1], reverse=True))
         data["next_words"] = dict(sorted(data["next_words"].items(), key=lambda item: item[1], reverse=True)[:3])
 
-    #print("Total word count:", total_word_count)
-    # Save data to JSON file
+    #s ave
     with open(output_json, 'w', encoding='utf-8') as f:
         json.dump(word_data, f, indent=4)
 
 
-# Replace with your actual directory paths and file names
 corpus_dir = "../train_tk"
 vocabulary_file = "../Datas/vocabulary.txt"
 output_json = "../Datas/matrice.json"
